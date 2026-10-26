@@ -174,12 +174,14 @@ Se não estiver, 60h é um exagero. Os dados não permitem decidir.
 
 A diretora quer resultado "em 60 dias, no máximo". Com cerca de 425 leads de entrada por mês, e para detectar a diferença com 95% de confiança e 80% de poder:
 
-| Mudança a detectar | Leads por grupo | Tempo de coleta |
-|---|---|---|
-| SLA: de 26% para 36% (+10 p.p.) | 334 | **menos de 1 mês** |
-| Lead até qualificado: de 38,7% para 43,7% (+5 p.p.) | 1.520 | ~3,6 meses |
-| Lead até ganho: de 11,7% para 14,7% (+3 p.p.) | 1.991 | ~4,7 meses, **mais 60 dias** de maturação |
-| Lead até ganho: +2 p.p. | 4.336 | ~10 meses |
+| Mudança a detectar | Leads por grupo | Meses de leads para encher **um** grupo | Com piloto 50/50 (dois grupos) |
+|---|---|---|---|
+| SLA: de 26% para 36% (+10 p.p.) | 334 | menos de 1 mês | **~1,6 mês** |
+| Lead até qualificado: de 38,7% para 43,7% (+5 p.p.) | 1.520 | ~3,6 meses | ~7 meses |
+| Lead até ganho: de 11,7% para 14,7% (+3 p.p.) | 1.991 | ~4,7 meses | ~9,4 meses, **mais 60 dias** de maturação |
+| Lead até ganho: +2 p.p. | 4.336 | ~10 meses | ~20 meses |
+
+A comparação pede dois grupos (agente e controle), por isso o tempo real é o da última coluna. Correção feita durante o entregável 4: a versão anterior desta tabela mostrava só a coluna de um grupo.
 
 **Implicação para o entregável 4:** em 60 dias dá para provar velocidade, cobertura (ninguém sem contato) e qualidade do registro. **Conversão em venda não dá:** ela entra como métrica de acompanhamento, com uma data honesta de leitura.
 

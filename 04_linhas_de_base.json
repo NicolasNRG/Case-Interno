@@ -1,0 +1,56 @@
+{
+  "qualificacao_7d": {
+    "q3": 0.3918,
+    "jan_set": 0.3918,
+    "por_mes": {
+      "2026-01": 0.3775,
+      "2026-02": 0.4093,
+      "2026-03": 0.3963,
+      "2026-04": 0.3767,
+      "2026-05": 0.4018,
+      "2026-06": 0.3908,
+      "2026-07": 0.3908,
+      "2026-08": 0.4035,
+      "2026-09": 0.3779
+    },
+    "qualificacao_total_coortes_maduras": 0.3866,
+    "qualificacoes_que_acontecem_em_7d": 0.9994
+  },
+  "hipotese_ganho_qualificacao": {
+    "nunca_contatados_q3": 0.2147,
+    "desses_ja_desqualificados_por_segmento_ou_porte": 0.3994,
+    "taxa_qualificacao_de_quem_e_contatado": 0.498,
+    "ganho_esperado_pp": 0.0642,
+    "formula": "nunca_contatados x (1 - ja_desqualificados) x taxa_qualificacao_de_quem_e_contatado"
+  },
+  "velocidade_hoje_q3_min_uteis": {
+    "p50": 27.0,
+    "p90": 134.9,
+    "p95": 200.8,
+    "p99": 1373.6
+  },
+  "piloto": {
+    "semanas": 5,
+    "divisao_agente": 0.5,
+    "leads_de_entrada_por_semana": 98.2,
+    "leads_por_grupo": 245,
+    "efeito_minimo_detectavel_pp": {
+      "dentro_sla": 0.118,
+      "nunca_contatados": 0.095,
+      "qualificacao_7d": 0.126,
+      "lead_para_ganho": 0.094
+    },
+    "meio_ic95_da_diferenca_qualificacao_7d_pp": 0.086
+  },
+  "pos_piloto_meses_para_provar": {
+    "controle_50%": {
+      "qualificacao_7d_+6.4pp": 4.4,
+      "lead_para_ganho_+3pp": 9.4
+    },
+    "controle_20%": {
+      "qualificacao_7d_+6.4pp": 10.9,
+      "lead_para_ganho_+3pp": 23.4
+    },
+    "nota": "meses de entrada de leads até o grupo menor atingir o tamanho necessário; a venda ainda precisa de +60 dias de maturação"
+  }
+}
