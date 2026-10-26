@@ -13,7 +13,7 @@ Agente de primeiro contato e qualificação de leads. Arquivos nomeados pelo nú
 
 Os materiais originais e a versão da tabela com contatos não são versionados (ver `01_nota_decisoes.md`, seção 6).
 
-Para reproduzir:
+Para reproduzir (Python 3.10+; `pip install -r requirements.txt`), rode os scripts **nesta ordem**. O 02 e o 03 leem a tabela gerada pelo 01; se o código mudar, gere a tabela de novo antes:
 
 ```
 python 01_etl.py --input <pasta_dos_materiais> --output . --output-local saida_local

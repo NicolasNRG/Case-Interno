@@ -29,6 +29,26 @@ DATAS = ["data_entrada", "data_primeiro_contato_crm", "data_qualificacao", "data
          "data_ganho", "data_primeira_msg_lead", "data_primeira_msg_vertice", "data_ultima_msg",
          "data_chegada", "data_primeiro_contato",
          "planilha_data_1o_contato"]
+COLUNAS_EXIGIDAS = DATAS + [
+    "lead_id", "em_crm", "em_conversas", "em_planilha", "mes_entrada", "dias_entrada_ate_export",
+    "n_deals_crm", "sdr_responsavel", "porte_faixa", "porte_playbook", "status_lead", "motivo_perda",
+    "contatado_crm", "qualificado", "proposta_enviada", "ganho", "ciclo_dias", "valor_estimado",
+    "valor_estimado_tratado", "canal_conversa", "n_msg_lead", "n_msg_vertice", "conversa_iniciada_por",
+    "lead_sem_resposta", "intencao_primeira_msg", "chegada_no_expediente", "tempo_ate_1o_contato_min",
+    "tempo_ate_1o_contato_min_uteis", "aplica_sla", "dentro_sla_playbook", "planilha_status",
+    "planilha_obs", "dq_duplicado_no_crm", "dq_ganho_sem_etapa_fechamento", "dq_valor_outlier",
+]
+
+
+def confere_colunas(caminho: Path, exigidas: list[str]) -> None:
+    """Para com uma mensagem clara se a tabela veio de uma versão antiga do 01_etl.py."""
+    cabecalho = set(pd.read_csv(caminho, sep=";", encoding="utf-8-sig", nrows=0).columns)
+    faltando = [c for c in exigidas if c not in cabecalho]
+    if faltando:
+        raise SystemExit(
+            f"A tabela {caminho} não tem as colunas: {', '.join(faltando)}.\n"
+            "Ela foi gerada por uma versão antiga do 01_etl.py. Gere a tabela de novo com a versão atual:\n"
+            "    python 01_etl.py --input <pasta_dos_materiais> --output . --output-local saida_local")
 
 
 def wilson(sucessos: int, n: int, z: float = 1.96) -> tuple[float, float]:
@@ -62,6 +82,7 @@ def n_por_grupo(p1: float, delta: float, z_alfa: float = 1.96, z_poder: float = 
 
 
 def carrega(caminho: Path) -> pd.DataFrame:
+    confere_colunas(caminho, COLUNAS_EXIGIDAS)
     df = pd.read_csv(caminho, sep=";", encoding="utf-8-sig", parse_dates=DATAS, low_memory=False)
     for c in df.columns:  # booleanos com vazio chegam como texto; viram booleano anulável
         if df[c].dtype == object and set(df[c].dropna().unique()) <= {True, False, "True", "False"}:

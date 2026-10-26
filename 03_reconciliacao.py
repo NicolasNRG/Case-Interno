@@ -145,7 +145,18 @@ def reproduz_painel(deals: list[dict], painel: dict) -> dict:
 # Ponte, série oficial e efeito da fórmula do painel
 # ---------------------------------------------------------------------------
 
+COLUNAS_EXIGIDAS = ["deal_id_principal", "deal_ids", "em_crm", "mes_entrada", "data_entrada",
+                    "data_ganho", "ciclo_dias", "qualificado", "ganho", "status_lead"]
+
+
 def carrega_tabela(caminho: Path) -> pd.DataFrame:
+    cabecalho = set(pd.read_csv(caminho, sep=";", encoding="utf-8-sig", nrows=0).columns)
+    faltando = [c for c in COLUNAS_EXIGIDAS if c not in cabecalho]
+    if faltando:
+        raise SystemExit(
+            f"A tabela {caminho} não tem as colunas: {', '.join(faltando)}.\n"
+            "Gere a tabela de novo com a versão atual do 01_etl.py:\n"
+            "    python 01_etl.py --input <pasta_dos_materiais> --output . --output-local saida_local")
     df = pd.read_csv(caminho, sep=";", encoding="utf-8-sig", low_memory=False,
                      parse_dates=["data_entrada", "data_ganho"])
     df = df[df["em_crm"] == True].copy()
