@@ -8,7 +8,7 @@ Agente de primeiro contato e qualificação de leads. Arquivos nomeados pelo nú
 | 2 | Documento de Baseline | `02_baseline.md`, `02_calculos_baseline.py`, `02_metricas_baseline.json` | feito |
 | 3 | Reconciliação do dashboard | `03_reconciliacao_dashboard.md`, `03_reconciliacao.py`, `03_reconciliacao.json` | feito |
 | 4 | Critérios de aceite e eventos | `04_criterios_aceite_eventos.md`, `04_linhas_de_base_criterios.py`, `04_linhas_de_base.json` | feito |
-| 5 | Arquitetura do agente | — | a fazer |
+| 5 | Arquitetura do agente | `05_arquitetura_agente.md` | feito |
 | 6 | Histórico de conversas com o Claude | links compartilhados | a fazer |
 
 Os materiais originais e a versão da tabela com contatos não são versionados (ver `01_nota_decisoes.md`, seção 6).
