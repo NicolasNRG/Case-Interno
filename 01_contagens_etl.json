@@ -1,0 +1,74 @@
+{
+  "crm": {
+    "deals_lidos": 4332,
+    "record_count_declarado_no_export": 4332,
+    "problemas_corrigidos_sem_descarte": {
+      "historico_fora_de_ordem": 81,
+      "created_at_invalido_substituido_pela_entrada": 52,
+      "ganho_sem_etapa_fechamento": 12,
+      "qualified_flag_sem_etapa_qualificacao": 86,
+      "proposal_sent_sem_etapa_proposta": 49,
+      "segmento_nao_mapeado": 0,
+      "segmento_grafia_fora_do_padrao": 1329,
+      "valor_outlier": 61
+    },
+    "grupos_de_duplicados": 232,
+    "deals_absorvidos_por_duplicidade": 232,
+    "duplicados_que_ja_estavam_marcados_como_Duplicado": 52,
+    "leads_unicos": 4100
+  },
+  "conversas": {
+    "mensagens_lidas": 12900,
+    "timestamps_Z_tratados_como_local": 129,
+    "mensagens_ligadas_a_leads": 12900,
+    "leads_com_conversa": 3533,
+    "evidencia_Z_primeira_resposta": {
+      "igual_ao_CRM_lendo_como_local": 30,
+      "diferente_do_CRM": 1
+    }
+  },
+  "planilha": {
+    "linhas_lidas": 1170,
+    "linhas_por_aba": {
+      "Jul": 398,
+      "Ago": 381,
+      "Set": 391
+    },
+    "sem_codigo": 112,
+    "codigo_fora_do_padrao_corrigido": 71,
+    "formatos_de_data": {
+      "texto dd/mm/aaaa hh:mm": 336,
+      "data_excel": 656,
+      "texto mm/dd/aaaa (EUA)": 57,
+      "texto dd/mm (sem ano)": 121
+    },
+    "status_nao_mapeado": 0,
+    "sdr_nao_mapeado": 0,
+    "linhas_repetidas_descartadas": 21,
+    "linhas_repetidas_identicas_a_primeira": 21,
+    "ligadas_pelo_telefone": 1117,
+    "codigo_confere_com_o_telefone": 1039,
+    "codigo_diverge_do_telefone": 0,
+    "linhas_sem_lead_no_crm_(viram_lead_so_planilha)": 32,
+    "obs_das_linhas_sem_crm": {
+      "não achei no CRM": 32
+    }
+  },
+  "tabela_final": {
+    "linhas": 4132,
+    "leads_por_fonte": {
+      "crm+conversas": 2416,
+      "crm+conversas+planilha": 1117,
+      "crm": 567,
+      "planilha": 32
+    },
+    "leads_q3": 1475,
+    "leads_q3_por_fonte": {
+      "crm+conversas+planilha": 1117,
+      "crm": 201,
+      "crm+conversas": 125,
+      "planilha": 32
+    },
+    "lead_id_unico": true
+  }
+}
