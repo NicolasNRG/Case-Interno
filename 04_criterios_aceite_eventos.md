@@ -9,7 +9,7 @@ Os critérios estão em três blocos:
 
 Cada métrica diz de quais eventos é calculada.
 
-As linhas de base vêm do entregável 2 (`02_metricas_baseline.json`) e de `04_linhas_de_base_criterios.py` (`04_linhas_de_base.json`). As metas são **propostas**, para validar com Felipe (dono do playbook) e Renata (sponsor).
+As linhas de base vêm dos scripts `02_calculos_baseline.py` (entregável 2) e `04_linhas_de_base_criterios.py`. Ao rodar, este último grava os valores em `04_linhas_de_base.json`. Para reproduzir, rode antes o `01_etl.py` e depois: `python 04_linhas_de_base_criterios.py --tabela <caminho>/01_tabela_analitica.csv`. As metas são **propostas**, para validar com Felipe (dono do playbook) e Renata (sponsor).
 
 ---
 

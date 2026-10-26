@@ -2,7 +2,7 @@
 
 **Pergunta que este documento responde:** qual é a situação de hoje, com número e fonte.
 
-Todos os números saem de `02_calculos_baseline.py`, aplicado à tabela do entregável 1, e ficam registrados em `02_metricas_baseline.json`. Nenhum foi digitado à mão.
+Todos os números saem de `02_calculos_baseline.py`, aplicado à tabela do entregável 1. Nenhum foi digitado à mão. Ao rodar, o script também grava todos os valores em `02_metricas_baseline.json`.
 
 **Classes de fonte:**
 - **A**: extraído de sistema (Pipeway CRM e log do WhatsApp e do e-mail);
@@ -197,4 +197,4 @@ A comparação pede dois grupos (agente e controle), por isso o tempo real é o 
 6. **Ligações telefônicas não aparecem em nenhuma fonte.** Só 26 dos 3.199 leads contatados no CRM não têm nenhuma mensagem da Vértice no log, o que sugere que contato só por telefone é raro. O horário desse contato, porém, depende de o SDR mover a etapa no CRM.
 7. **Velocidade × ganho é correlação.** A prova causal fica para o piloto (entregável 4), comparando leads atendidos pelo agente com leads atendidos só por humanos no mesmo período.
 
-**Reprodução:** `python 02_calculos_baseline.py --tabela 01_tabela_analitica.csv --saida 02_metricas_baseline.json`
+**Reprodução:** rode antes o `01_etl.py`, que gera a `01_tabela_analitica.csv`. Depois: `python 02_calculos_baseline.py --tabela <caminho>/01_tabela_analitica.csv --saida 02_metricas_baseline.json`

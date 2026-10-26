@@ -4,10 +4,10 @@
 
 | Arquivo | O que é |
 |---|---|
-| `01_etl.py` | Script reproduzível (Python 3.10+, pandas, openpyxl) |
-| `01_tabela_analitica.csv` / `.xlsx` | Tabela final, **pseudonimizada** (sem nome, telefone e e-mail do contato) |
-| `01_contagens_etl.json` | Contagem de registros por etapa, gerada pelo próprio script |
-| `saida_local/01_tabela_analitica_com_contatos.xlsx` | Mesma tabela com contatos. Fica fora do git (ver seção 6) |
+| `01_etl.py` | Script reproduzível (Python 3.10+, pandas, openpyxl). Gera todos os arquivos abaixo |
+| `01_tabela_analitica_com_contatos.xlsx` | **A tabela entregue:** um lead por linha, com nome, telefone e e-mail. Vai para uma pasta separada (`--output-local`), fora do git (ver seção 6) |
+| `01_tabela_analitica.csv` / `.xlsx` | Gerada ao rodar o script: a mesma tabela **pseudonimizada** (sem nome, telefone e e-mail). É a versão que fica no git e a que os scripts dos entregáveis 2 a 4 leem |
+| `01_contagens_etl.json` | Gerado ao rodar o script: as contagens da seção 4, em formato de máquina |
 
 Para rodar: `python 01_etl.py --input <pasta_dos_materiais> --output . --output-local saida_local`. Leva cerca de 10 segundos.
 

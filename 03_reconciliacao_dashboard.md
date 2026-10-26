@@ -2,7 +2,9 @@
 
 **O painel diz 29,7%. A base diz 11,7%.** Este documento explica por que os dois números divergem, qual deles está certo e qual passa a ser a definição oficial da métrica.
 
-Todos os números saem de `03_reconciliacao.py`, que lê o próprio export do painel e o export bruto do Pipeway. O resultado fica registrado em `03_reconciliacao.json`.
+Todos os números saem de `03_reconciliacao.py`, que lê o próprio export do painel, o export bruto do Pipeway e a tabela do entregável 1. Ao rodar, o script grava o resultado em `03_reconciliacao.json`.
+
+Para reproduzir, rode antes o `01_etl.py` e depois: `python 03_reconciliacao.py --input <pasta_dos_materiais> --tabela <caminho>/01_tabela_analitica.csv`
 
 ## Resposta curta
 
