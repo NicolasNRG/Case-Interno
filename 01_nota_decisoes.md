@@ -86,11 +86,19 @@ Fora do Q3 a planilha não existe, e por isso as colunas `planilha_*` ficam vazi
   A planilha não é atualizada depois do primeiro registro.
 - **Os 32 leads só da planilha** vieram de "whatsapp direto" ou "ligou" (18) e de indicação (14). **12 deles estão marcados "qualificado" e nunca entraram no CRM:** é demanda que o painel não enxerga.
 - **13 leads do Q3 tiveram o primeiro deal ignorado** e só foram contatados quando voltaram por um deal duplicado. No nível do lead, o tempo de resposta deles é medido desde a primeira entrada (dias). Do ponto de vista do lead, foi isso que aconteceu.
-- **Conversas:**
-  - mediana de 30 min entre a primeira mensagem do lead e a primeira resposta;
-  - **30% dos leads com conversa foram atendidos dentro do SLA do playbook;**
-  - 463 leads mandaram mensagem e nunca receberam resposta.
-- **Só 20 das 3.533 primeiras mensagens caem fora do expediente** (todas às 18h). As entradas se concentram às 8h e na segunda-feira. Ver limitação 2.
+- **Tempo até o primeiro contato** (da chegada do lead ao primeiro contato, juntando CRM e log): mediana de 25 min úteis. **Só 27% dos leads de entrada são contatados dentro do SLA do playbook**, e 463 leads mandaram mensagem e nunca receberam resposta. Números oficiais no entregável 2.
+- **O log nunca mostra contato antes da etapa "Contato" do CRM.** Isso valida o horário do CRM como o primeiro contato real.
+- **Nenhuma chegada aparece fora do expediente,** mas as entradas se concentram às 8h e na segunda-feira. Ver limitação 2.
+
+### Revisão feita durante o entregável 2
+
+A primeira versão da tabela media o tempo de resposta pelo log, como "da 1ª mensagem do lead à 1ª resposta". Ao cruzar essa medida com a conversão, apareceu um paradoxo: leads respondidos depois de 4h convertiam mais. A causa: quando a Vértice inicia a conversa, a "resposta" capturada é um follow-up de dias depois, e leads que avançam no funil recebem mais follow-ups.
+
+A medida foi trocada por **chegada → primeiro contato**:
+- a **chegada** é a entrada no CRM ou a 1ª mensagem do lead, o que vier antes;
+- o **contato** é a etapa Contato ou a 1ª mensagem da Vértice, o que vier antes.
+
+As colunas `tempo_1a_resposta_*` e `tempo_resposta_crm_*` saíram da tabela. Deram lugar às colunas `data_chegada`, `data_primeiro_contato` e `tempo_ate_1o_contato_*`, e às colunas de SLA. Detalhes no entregável 2, seção 2.
 
 ## 6. Decisões de privacidade
 
@@ -105,7 +113,7 @@ A Ficha proíbe que dados de contato dos leads saiam do ambiente da Vértice. A 
 5. **A campanha não é confiável:** o rótulo de trimestre da campanha não bate com a data do lead. A tabela usa `canal_origem` como origem oficial.
 6. **Para os 32 leads só da planilha**, `data_entrada` é a data do 1º contato registrada pelo SDR, porque é a única disponível. Eles não têm resultado e ficam fora das métricas de conversão.
 
-## 8. Dicionário de colunas (74)
+## 8. Dicionário de colunas (75)
 
 **Identificação e cobertura**
 
@@ -146,7 +154,6 @@ A Ficha proíbe que dados de contato dos leads saiam do ambiente da Vértice. A 
 | `ciclo_dias` | Dias da entrada ao ganho |
 | `valor_estimado`, `valor_estimado_tratado` | Valor original e valor sem os outliers |
 | `qualified_flag_crm` | Flag original do CRM, mantida para a reconciliação |
-| `tempo_resposta_crm_min`, `tempo_resposta_crm_min_uteis` | Da entrada ao contato, em minutos corridos e úteis |
 
 **Conversas**
 
@@ -155,14 +162,22 @@ A Ficha proíbe que dados de contato dos leads saiam do ambiente da Vértice. A 
 | `canal_conversa` | WhatsApp ou e-mail |
 | `n_msg_lead`, `n_msg_vertice` | Quantidade de mensagens de cada lado |
 | `conversa_iniciada_por` | `lead` ou `vertice` |
-| `data_primeira_msg_lead`, `data_primeira_resposta` | Primeira mensagem do lead e primeira resposta da Vértice depois dela |
-| `tempo_1a_resposta_min`, `tempo_1a_resposta_min_uteis` | Tempo entre as duas, em minutos corridos e úteis |
-| `primeira_msg_no_expediente` | Se a primeira mensagem chegou dentro do horário comercial |
-| `sla_playbook_min` | 15 ou 120, conforme o horário de chegada |
-| `dentro_sla_playbook` | Se a resposta cumpriu o SLA. Sem resposta conta como fora do SLA |
-| `lead_sem_resposta` | Lead mandou mensagem e não recebeu resposta |
+| `data_primeira_msg_lead`, `data_primeira_msg_vertice` | Primeira mensagem de cada lado |
+| `lead_sem_resposta` | Lead mandou mensagem e não recebeu nenhuma mensagem da Vértice depois |
 | `intencao_primeira_msg` | 7 categorias |
 | `data_ultima_msg` | Última mensagem trocada |
+
+**Tempo até o primeiro contato (CRM + log)**
+
+| Coluna | Significado |
+|---|---|
+| `data_chegada` | Entrada no CRM ou 1ª mensagem do lead, o que vier antes |
+| `chegada_no_expediente` | Se a chegada foi dentro do horário comercial |
+| `data_primeiro_contato` | Etapa Contato ou 1ª mensagem da Vértice, o que vier antes |
+| `tempo_ate_1o_contato_min`, `tempo_ate_1o_contato_min_uteis` | Tempo entre as duas, em minutos corridos e úteis |
+| `aplica_sla` | Falso para lista fria (canal Outbound) |
+| `sla_playbook_min` | 15 ou 120, conforme o horário de chegada |
+| `dentro_sla_playbook` | Se o contato cumpriu o SLA. Nunca contatado conta como fora do SLA |
 
 **Planilha**
 

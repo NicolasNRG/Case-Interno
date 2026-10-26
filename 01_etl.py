@@ -343,9 +343,6 @@ def deduplica_crm(deals: list[dict], cont: dict) -> list[dict]:
             "valor_estimado": ref["valor"],
             "valor_estimado_tratado": ref["valor"] if ref["valor"] < LIMITE_VALOR_OUTLIER else None,
             "qualified_flag_crm": any(d["qualified_flag"] for d in membros),
-            "tempo_resposta_crm_min": minutos(datas["Entrada"], datas["Contato"]),
-            "tempo_resposta_crm_min_uteis": (round(minutos_uteis(datas["Entrada"], datas["Contato"]), 1)
-                                             if datas["Contato"] else None),
             "dq_duplicado_no_crm": len(membros) > 1,
             "dq_duplicado_marcado_no_crm": any(d["motivo_perda"] == "Duplicado" for d in membros),
             "dq_created_at_invalido": any(d["dq_created_at_invalido"] for d in membros),
@@ -422,21 +419,13 @@ def carrega_conversas(caminho: Path, leads: list[dict], cont: dict) -> dict[str,
 
         primeira_in = ins[0]["ts"] if ins else None
         resposta = next((m["ts"] for m in outs if primeira_in and m["ts"] >= primeira_in), None)
-        tempo_uteis = round(minutos_uteis(primeira_in, resposta), 1) if resposta else None
-        no_exp = em_expediente(primeira_in) if primeira_in else None
-        sla = (SLA_NO_EXPEDIENTE_MIN if no_exp else SLA_FORA_EXPEDIENTE_MIN) if primeira_in else None
         agg[lead_id] = {
             "canal_conversa": ";".join(sorted({m["canal"] for m in ms})),
             "n_msg_lead": len(ins),
             "n_msg_vertice": len(outs),
             "conversa_iniciada_por": "lead" if ms[0]["dir"] == "in" else "vertice",
             "data_primeira_msg_lead": primeira_in,
-            "data_primeira_resposta": resposta,
-            "tempo_1a_resposta_min": minutos(primeira_in, resposta),
-            "tempo_1a_resposta_min_uteis": tempo_uteis,
-            "primeira_msg_no_expediente": no_exp,
-            "sla_playbook_min": sla,
-            "dentro_sla_playbook": (tempo_uteis <= sla) if resposta else (False if primeira_in else None),
+            "data_primeira_msg_vertice": outs[0]["ts"] if outs else None,
             "lead_sem_resposta": bool(primeira_in) and resposta is None,
             "intencao_primeira_msg": classifica_intencao(ins[0]["texto"]) if ins else None,
             "data_ultima_msg": ms[-1]["ts"],
@@ -570,12 +559,39 @@ def colunas_planilha(l: dict, lead: dict | None) -> dict:
 # 4. Montagem da tabela
 # ---------------------------------------------------------------------------
 
+def tempo_ate_primeiro_contato(reg: dict) -> dict:
+    """Do primeiro sinal do lead ao primeiro contato da Vértice, juntando CRM e log.
+
+    Chegada = o que vier antes entre a entrada no CRM e a 1ª mensagem do lead.
+    Contato = o que vier antes entre a etapa Contato do CRM e a 1ª mensagem da Vértice.
+    Leads de lista fria (canal Outbound) não têm SLA de resposta: a Vértice é quem aborda.
+    """
+    chegada = min(d for d in (reg["data_entrada"], reg["data_primeira_msg_lead"]) if d)
+    contato = min((d for d in (reg["data_primeiro_contato_crm"], reg["data_primeira_msg_vertice"]) if d),
+                  default=None)
+    contato = max(contato, chegada) if contato else None  # contato antes da chegada conta como imediato
+    no_exp = em_expediente(chegada)
+    sla = SLA_NO_EXPEDIENTE_MIN if no_exp else SLA_FORA_EXPEDIENTE_MIN
+    uteis = round(minutos_uteis(chegada, contato), 1) if contato else None
+    return {
+        "data_chegada": chegada,
+        "chegada_no_expediente": no_exp,
+        "data_primeiro_contato": contato,
+        "tempo_ate_1o_contato_min": minutos(chegada, contato),
+        "tempo_ate_1o_contato_min_uteis": uteis,
+        "aplica_sla": reg["canal_origem"] != "Outbound",
+        "sla_playbook_min": sla,
+        "dentro_sla_playbook": uteis is not None and uteis <= sla,
+    }
+
+
 def monta_tabela(leads, conversas, planilha_ligadas, so_planilha, cont) -> pd.DataFrame:
     vazio_conv = {k: None for k in next(iter(conversas.values()))}
     linhas = []
     for l in leads:
         reg = {k: v for k, v in l.items() if not k.endswith("_todos")}
         reg.update(conversas.get(l["lead_id"], vazio_conv))
+        reg.update(tempo_ate_primeiro_contato(reg))
         pl = planilha_ligadas.get(l["lead_id"])
         reg.update(colunas_planilha(pl, l) if pl else {})
         reg.update(em_crm=True, em_conversas=l["lead_id"] in conversas, em_planilha=pl is not None)
@@ -621,12 +637,15 @@ def monta_tabela(leads, conversas, planilha_ligadas, so_planilha, cont) -> pd.Da
         "data_primeiro_contato_crm", "data_qualificacao", "data_proposta", "data_ganho",
         "etapa_max", "status_lead", "motivo_perda", "contatado_crm", "qualificado",
         "proposta_enviada", "ganho", "ciclo_dias", "valor_estimado", "valor_estimado_tratado",
-        "qualified_flag_crm", "tempo_resposta_crm_min", "tempo_resposta_crm_min_uteis",
+        "qualified_flag_crm",
         # conversas
         "canal_conversa", "n_msg_lead", "n_msg_vertice", "conversa_iniciada_por",
-        "data_primeira_msg_lead", "data_primeira_resposta", "tempo_1a_resposta_min",
-        "tempo_1a_resposta_min_uteis", "primeira_msg_no_expediente", "sla_playbook_min",
-        "dentro_sla_playbook", "lead_sem_resposta", "intencao_primeira_msg", "data_ultima_msg",
+        "data_primeira_msg_lead", "data_primeira_msg_vertice", "lead_sem_resposta",
+        "intencao_primeira_msg", "data_ultima_msg",
+        # tempo até o primeiro contato (CRM + log)
+        "data_chegada", "chegada_no_expediente", "data_primeiro_contato",
+        "tempo_ate_1o_contato_min", "tempo_ate_1o_contato_min_uteis", "aplica_sla",
+        "sla_playbook_min", "dentro_sla_playbook",
         # planilha
         "planilha_aba", "planilha_linha", "planilha_data_1o_contato", "planilha_formato_data",
         "planilha_dif_dias_vs_crm", "planilha_sdr", "planilha_status_original", "planilha_status",

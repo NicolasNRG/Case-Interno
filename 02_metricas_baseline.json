@@ -1,0 +1,778 @@
+{
+  "volume": {
+    "deals_brutos_total": 4332,
+    "deals_brutos_por_mes_media": 481.3,
+    "leads_unicos_total": 4100,
+    "leads_unicos_por_mes_media": 455.6,
+    "leads_unicos_por_mes_q3": 481.0,
+    "serie_mensal": [
+      {
+        "mes_entrada": "2026-01",
+        "leads": 418,
+        "deals": 438
+      },
+      {
+        "mes_entrada": "2026-02",
+        "leads": 404,
+        "deals": 430
+      },
+      {
+        "mes_entrada": "2026-03",
+        "leads": 449,
+        "deals": 470
+      },
+      {
+        "mes_entrada": "2026-04",
+        "leads": 474,
+        "deals": 507
+      },
+      {
+        "mes_entrada": "2026-05",
+        "leads": 457,
+        "deals": 484
+      },
+      {
+        "mes_entrada": "2026-06",
+        "leads": 455,
+        "deals": 481
+      },
+      {
+        "mes_entrada": "2026-07",
+        "leads": 501,
+        "deals": 530
+      },
+      {
+        "mes_entrada": "2026-08",
+        "leads": 475,
+        "deals": 498
+      },
+      {
+        "mes_entrada": "2026-09",
+        "leads": 467,
+        "deals": 494
+      }
+    ],
+    "min_mes": 404,
+    "max_mes": 501,
+    "leads_so_planilha_q3": 32,
+    "leads_so_planilha_q3_qualificados": 12,
+    "taxa_duplicidade_deals": 0.0536
+  },
+  "funil_coortes_maduras_jan_jul": {
+    "leads": 3158,
+    "lead_para_ganho": {
+      "num": 368,
+      "den": 3158,
+      "taxa": 0.1165,
+      "ic95": [
+        0.1058,
+        0.1282
+      ]
+    },
+    "lead_para_contato": {
+      "num": 2452,
+      "den": 3158,
+      "taxa": 0.7764,
+      "ic95": [
+        0.7616,
+        0.7906
+      ]
+    },
+    "lead_para_qualificado": {
+      "num": 1221,
+      "den": 3158,
+      "taxa": 0.3866,
+      "ic95": [
+        0.3698,
+        0.4037
+      ]
+    },
+    "qualificado_para_proposta": {
+      "num": 691,
+      "den": 1221,
+      "taxa": 0.5659,
+      "ic95": [
+        0.538,
+        0.5935
+      ]
+    },
+    "proposta_para_ganho": {
+      "num": 368,
+      "den": 691,
+      "taxa": 0.5326,
+      "ic95": [
+        0.4953,
+        0.5695
+      ]
+    },
+    "qualificado_para_ganho": {
+      "num": 368,
+      "den": 1221,
+      "taxa": 0.3014,
+      "ic95": [
+        0.2763,
+        0.3277
+      ]
+    },
+    "ainda_abertos": {
+      "num": 489,
+      "den": 3158,
+      "taxa": 0.1548,
+      "ic95": [
+        0.1426,
+        0.1679
+      ]
+    }
+  },
+  "funil_por_coorte": [
+    {
+      "mes_entrada": "2026-01",
+      "leads": 418,
+      "contatados": 330,
+      "qualificados": 157,
+      "ganhos": 49,
+      "abertos": 54,
+      "lead_para_ganho": 0.1172,
+      "lead_para_qualificado": 0.3756,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-02",
+      "leads": 404,
+      "contatados": 308,
+      "qualificados": 165,
+      "ganhos": 41,
+      "abertos": 72,
+      "lead_para_ganho": 0.1015,
+      "lead_para_qualificado": 0.4084,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-03",
+      "leads": 449,
+      "contatados": 341,
+      "qualificados": 175,
+      "ganhos": 51,
+      "abertos": 71,
+      "lead_para_ganho": 0.1136,
+      "lead_para_qualificado": 0.3898,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-04",
+      "leads": 474,
+      "contatados": 367,
+      "qualificados": 176,
+      "ganhos": 48,
+      "abertos": 84,
+      "lead_para_ganho": 0.1013,
+      "lead_para_qualificado": 0.3713,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-05",
+      "leads": 457,
+      "contatados": 367,
+      "qualificados": 181,
+      "ganhos": 53,
+      "abertos": 81,
+      "lead_para_ganho": 0.116,
+      "lead_para_qualificado": 0.3961,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-06",
+      "leads": 455,
+      "contatados": 356,
+      "qualificados": 176,
+      "ganhos": 62,
+      "abertos": 55,
+      "lead_para_ganho": 0.1363,
+      "lead_para_qualificado": 0.3868,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-07",
+      "leads": 501,
+      "contatados": 383,
+      "qualificados": 191,
+      "ganhos": 64,
+      "abertos": 72,
+      "lead_para_ganho": 0.1277,
+      "lead_para_qualificado": 0.3812,
+      "madura": true
+    },
+    {
+      "mes_entrada": "2026-08",
+      "leads": 475,
+      "contatados": 371,
+      "qualificados": 194,
+      "ganhos": 42,
+      "abertos": 308,
+      "lead_para_ganho": 0.0884,
+      "lead_para_qualificado": 0.4084,
+      "madura": false
+    },
+    {
+      "mes_entrada": "2026-09",
+      "leads": 467,
+      "contatados": 376,
+      "qualificados": 180,
+      "ganhos": 2,
+      "abertos": 465,
+      "lead_para_ganho": 0.0043,
+      "lead_para_qualificado": 0.3854,
+      "madura": false
+    }
+  ],
+  "todos_os_leads_jan_set": {
+    "lead_para_ganho": {
+      "num": 412,
+      "den": 4100,
+      "taxa": 0.1005,
+      "ic95": [
+        0.0917,
+        0.1101
+      ]
+    },
+    "qualificado_para_ganho": {
+      "num": 412,
+      "den": 1595,
+      "taxa": 0.2583,
+      "ic95": [
+        0.2374,
+        0.2804
+      ]
+    }
+  },
+  "tempos_entre_etapas_dias": {
+    "entrada_ate_contato": {
+      "n": 3199,
+      "media": 0.1,
+      "p50": 0.0,
+      "p90": 0.1,
+      "p99": 2.7
+    },
+    "entrada_ate_qualificacao": {
+      "n": 1595,
+      "media": 2.8,
+      "p50": 2.9,
+      "p90": 5.0,
+      "p99": 6.0
+    },
+    "entrada_ate_ganho_ciclo": {
+      "n": 412,
+      "media": 32.3,
+      "p25": 23.0,
+      "p50": 32.0,
+      "p75": 42.0,
+      "p90": 49.0,
+      "max": 59
+    }
+  },
+  "resposta_jan_set": {
+    "leads": 3818,
+    "minutos_uteis_entre_contatados": {
+      "n": 2982,
+      "media": 81.5,
+      "p25": 11.2,
+      "p50": 25.0,
+      "p75": 60.8,
+      "p90": 131.0
+    },
+    "minutos_corridos_entre_contatados": {
+      "n": 2982,
+      "media": 196.3,
+      "p25": 11.2,
+      "p50": 25.0,
+      "p75": 61.0,
+      "p90": 144.9
+    },
+    "ate_15_min_uteis_entre_contatados": {
+      "num": 1018,
+      "den": 2982,
+      "taxa": 0.3414,
+      "ic95": [
+        0.3246,
+        0.3586
+      ]
+    },
+    "dentro_sla_playbook_entre_todos": {
+      "num": 1018,
+      "den": 3818,
+      "taxa": 0.2666,
+      "ic95": [
+        0.2528,
+        0.2809
+      ]
+    },
+    "nunca_contatados": {
+      "num": 836,
+      "den": 3818,
+      "taxa": 0.219,
+      "ic95": [
+        0.2061,
+        0.2324
+      ]
+    },
+    "escreveram_e_ficaram_sem_resposta": {
+      "num": 426,
+      "den": 3818,
+      "taxa": 0.1116,
+      "ic95": [
+        0.102,
+        0.122
+      ]
+    }
+  },
+  "resposta_q3": {
+    "leads": 1276,
+    "minutos_uteis_entre_contatados": {
+      "n": 1002,
+      "media": 94.9,
+      "p25": 12.0,
+      "p50": 27.0,
+      "p75": 63.0,
+      "p90": 134.9
+    },
+    "minutos_corridos_entre_contatados": {
+      "n": 1002,
+      "media": 235.9,
+      "p25": 12.0,
+      "p50": 27.0,
+      "p75": 65.0,
+      "p90": 145.0
+    },
+    "ate_15_min_uteis_entre_contatados": {
+      "num": 330,
+      "den": 1002,
+      "taxa": 0.3293,
+      "ic95": [
+        0.3009,
+        0.359
+      ]
+    },
+    "dentro_sla_playbook_entre_todos": {
+      "num": 330,
+      "den": 1276,
+      "taxa": 0.2586,
+      "ic95": [
+        0.2353,
+        0.2833
+      ]
+    },
+    "nunca_contatados": {
+      "num": 274,
+      "den": 1276,
+      "taxa": 0.2147,
+      "ic95": [
+        0.1931,
+        0.2381
+      ]
+    },
+    "escreveram_e_ficaram_sem_resposta": {
+      "num": 132,
+      "den": 1276,
+      "taxa": 0.1034,
+      "ic95": [
+        0.0879,
+        0.1214
+      ]
+    }
+  },
+  "resposta_por_mes": {
+    "2026-01": {
+      "leads": 400,
+      "mediana_min_uteis": 22.0,
+      "dentro_sla": 0.29,
+      "nunca_contatados": 0.2075
+    },
+    "2026-02": {
+      "leads": 386,
+      "mediana_min_uteis": 24.0,
+      "dentro_sla": 0.2617,
+      "nunca_contatados": 0.2358
+    },
+    "2026-03": {
+      "leads": 429,
+      "mediana_min_uteis": 23.0,
+      "dentro_sla": 0.2844,
+      "nunca_contatados": 0.2331
+    },
+    "2026-04": {
+      "leads": 454,
+      "mediana_min_uteis": 25.0,
+      "dentro_sla": 0.2599,
+      "nunca_contatados": 0.2247
+    },
+    "2026-05": {
+      "leads": 438,
+      "mediana_min_uteis": 25.0,
+      "dentro_sla": 0.2694,
+      "nunca_contatados": 0.1986
+    },
+    "2026-06": {
+      "leads": 435,
+      "mediana_min_uteis": 25.0,
+      "dentro_sla": 0.2598,
+      "nunca_contatados": 0.2276
+    },
+    "2026-07": {
+      "leads": 476,
+      "mediana_min_uteis": 26.0,
+      "dentro_sla": 0.2479,
+      "nunca_contatados": 0.2374
+    },
+    "2026-08": {
+      "leads": 456,
+      "mediana_min_uteis": 29.0,
+      "dentro_sla": 0.2654,
+      "nunca_contatados": 0.2149
+    },
+    "2026-09": {
+      "leads": 344,
+      "mediana_min_uteis": 27.0,
+      "dentro_sla": 0.2645,
+      "nunca_contatados": 0.1831
+    }
+  },
+  "resposta_por_sdr": {
+    "Ana Paula Mendes": {
+      "leads": 920,
+      "mediana_min_uteis": 9.0,
+      "dentro_sla": 0.6152,
+      "nunca_contatados": 0.2228
+    },
+    "Bruno Takahashi": {
+      "leads": 980,
+      "mediana_min_uteis": 37.0,
+      "dentro_sla": 0.1255,
+      "nunca_contatados": 0.2296
+    },
+    "Carla Nogueira": {
+      "leads": 986,
+      "mediana_min_uteis": 19.0,
+      "dentro_sla": 0.3012,
+      "nunca_contatados": 0.2231
+    },
+    "Diego Fontoura": {
+      "leads": 932,
+      "mediana_min_uteis": 77.5,
+      "dentro_sla": 0.0343,
+      "nunca_contatados": 0.1996
+    }
+  },
+  "chegadas_fora_do_expediente": 0,
+  "ganho_por_faixa_de_contato_jan_jul": {
+    "1. ate 15 min": {
+      "num": 149,
+      "den": 806,
+      "taxa": 0.1849,
+      "ic95": [
+        0.1596,
+        0.2131
+      ],
+      "lead_para_qualificado": 0.5782
+    },
+    "2. 15-60 min": {
+      "num": 147,
+      "den": 971,
+      "taxa": 0.1514,
+      "ic95": [
+        0.1302,
+        0.1753
+      ],
+      "lead_para_qualificado": 0.5211
+    },
+    "3. 1-4 h uteis": {
+      "num": 63,
+      "den": 494,
+      "taxa": 0.1275,
+      "ic95": [
+        0.101,
+        0.1598
+      ],
+      "lead_para_qualificado": 0.3947
+    },
+    "4. mais de 4 h uteis": {
+      "num": 5,
+      "den": 72,
+      "taxa": 0.0694,
+      "ic95": [
+        0.03,
+        0.1525
+      ],
+      "lead_para_qualificado": 0.2222
+    },
+    "5. nunca contatado": {
+      "num": 0,
+      "den": 675,
+      "taxa": 0.0,
+      "ic95": [
+        0.0,
+        0.0057
+      ],
+      "lead_para_qualificado": 0.0
+    }
+  },
+  "ganho_por_faixa_e_sdr_jan_jul": [
+    {
+      "sdr_responsavel": "Ana Paula Mendes",
+      "ate15": false,
+      "size": 120,
+      "mean": 0.1833
+    },
+    {
+      "sdr_responsavel": "Ana Paula Mendes",
+      "ate15": true,
+      "size": 446,
+      "mean": 0.1928
+    },
+    {
+      "sdr_responsavel": "Bruno Takahashi",
+      "ate15": false,
+      "size": 495,
+      "mean": 0.1374
+    },
+    {
+      "sdr_responsavel": "Bruno Takahashi",
+      "ate15": true,
+      "size": 98,
+      "mean": 0.2143
+    },
+    {
+      "sdr_responsavel": "Carla Nogueira",
+      "ate15": false,
+      "size": 371,
+      "mean": 0.1294
+    },
+    {
+      "sdr_responsavel": "Carla Nogueira",
+      "ate15": true,
+      "size": 236,
+      "mean": 0.1653
+    },
+    {
+      "sdr_responsavel": "Diego Fontoura",
+      "ate15": false,
+      "size": 551,
+      "mean": 0.1397
+    },
+    {
+      "sdr_responsavel": "Diego Fontoura",
+      "ate15": true,
+      "size": 26,
+      "mean": 0.1154
+    }
+  ],
+  "nao_atendidos_jan_jul": {
+    "nunca_contatados_no_crm": {
+      "num": 706,
+      "den": 3158,
+      "taxa": 0.2236,
+      "ic95": [
+        0.2094,
+        0.2384
+      ]
+    },
+    "nunca_contatados_sem_nenhuma_msg": {
+      "num": 426,
+      "den": 3158,
+      "taxa": 0.1349,
+      "ic95": [
+        0.1234,
+        0.1473
+      ]
+    },
+    "nunca_contatados_que_mandaram_msg": {
+      "num": 280,
+      "den": 3158,
+      "taxa": 0.0887,
+      "ic95": [
+        0.0792,
+        0.0991
+      ]
+    },
+    "motivo_perda_dos_nunca_contatados": {
+      "Sem resposta": 296,
+      "Fora do segmento": 143,
+      "Porte abaixo do mínimo": 139,
+      "(aberto)": 128
+    }
+  },
+  "ticket": {
+    "ganhos": 412,
+    "media_bruta": 29939.81,
+    "media_sem_outliers": 15551.96,
+    "mediana_sem_outliers": 14150.0,
+    "p25_p75_sem_outliers": [
+      10300.0,
+      19050.0
+    ],
+    "ganhos_outlier": 4,
+    "valores_outlier": [
+      630000,
+      1270000,
+      1800000,
+      2290000
+    ]
+  },
+  "ciclo_dias": {
+    "n": 412,
+    "media": 32.3,
+    "p25": 23.0,
+    "p50": 32.0,
+    "p75": 42.0,
+    "p90": 49.0,
+    "min": 3,
+    "max": 59,
+    "ganhos_com_data_por_updated_at": 12
+  },
+  "perfil": {
+    "motivo_perda_leads": {
+      "Sem resposta": 974,
+      "Fora do segmento": 535,
+      "Porte abaixo do mínimo": 497,
+      "Sem orçamento": 108,
+      "Escolheu concorrente": 107,
+      "Já tem solução interna": 105,
+      "Timing (retomar em 6 meses)": 100
+    },
+    "porte_playbook": {
+      "qualifica (>=50)": 2234,
+      "indefinido (faixa cruza 20 e 50)": 865,
+      "escala p/ humano (>500)": 562,
+      "elimina (<20)": 439
+    },
+    "intencao_primeira_msg": {
+      "preco": 551,
+      "agendamento": 515,
+      "pedido_orcamento": 513,
+      "cobertura_regiao": 507,
+      "pede_ligacao": 505,
+      "ja_tem_solucao": 493,
+      "como_funciona": 449
+    },
+    "canal_conversa": {
+      "whatsapp": 2911,
+      "email": 622
+    },
+    "conversa_iniciada_por": {
+      "lead": 3089,
+      "vertice": 444
+    },
+    "entrada_por_hora": {
+      "8": 1885,
+      "9": 524,
+      "10": 501,
+      "11": 181,
+      "12": 158,
+      "13": 178,
+      "14": 180,
+      "15": 160,
+      "16": 178,
+      "17": 155
+    },
+    "entrada_por_dia_semana": {
+      "0": 1447,
+      "1": 918,
+      "2": 558,
+      "3": 564,
+      "4": 613
+    }
+  },
+  "conformidade_playbook": {
+    "leads_perdidos_por_sem_orcamento": 108,
+    "ganhos_com_porte_1_10": 13,
+    "leads_com_deal_duplicado": 232,
+    "planilha_obs_concorrente": 29,
+    "valor_ganhos_porte_1_10": 167000,
+    "leads_abertos_coortes_maduras": 489
+  },
+  "funil_por_porte_jan_jul": [
+    {
+      "porte_faixa": "1-10",
+      "leads": 335,
+      "ganhos": 10,
+      "qualificados": 80,
+      "lead_para_ganho": 0.0299
+    },
+    {
+      "porte_faixa": "1000+",
+      "leads": 169,
+      "ganhos": 26,
+      "qualificados": 81,
+      "lead_para_ganho": 0.1538
+    },
+    {
+      "porte_faixa": "11-50",
+      "leads": 641,
+      "ganhos": 49,
+      "qualificados": 185,
+      "lead_para_ganho": 0.0764
+    },
+    {
+      "porte_faixa": "201-500",
+      "leads": 625,
+      "ganhos": 92,
+      "qualificados": 271,
+      "lead_para_ganho": 0.1472
+    },
+    {
+      "porte_faixa": "501-1000",
+      "leads": 284,
+      "ganhos": 46,
+      "qualificados": 126,
+      "lead_para_ganho": 0.162
+    },
+    {
+      "porte_faixa": "51-200",
+      "leads": 1104,
+      "ganhos": 145,
+      "qualificados": 478,
+      "lead_para_ganho": 0.1313
+    }
+  ],
+  "esforco": {
+    "horas_mes_declaradas": 260.0,
+    "pct_capacidade_sdr": 0.375,
+    "volume_mes": {
+      "leads_unicos": 455.6,
+      "leads_contatados": 355.4,
+      "leads_qualificados": 177.2,
+      "mensagens_enviadas_pelos_sdrs": 638.4,
+      "mensagens_recebidas_dos_leads": 794.9,
+      "linhas_na_planilha_paralela": 383.0,
+      "pedidos_de_ligacao_primeira_msg": 56.1
+    },
+    "horas_declaradas_implicam": {
+      "min_por_lead_que_entra": 34.2,
+      "min_por_lead_contatado": 43.9,
+      "min_por_mensagem_enviada": 24.4
+    },
+    "horas_mes_por_minuto_de_premissa": {
+      "por_mensagem_enviada": 10.6,
+      "por_lead_contatado": 5.9,
+      "por_linha_da_planilha": 6.4
+    }
+  },
+  "detectabilidade": {
+    "leads_de_entrada_por_mes_q3": 425.3,
+    "lead_para_ganho +2pp": {
+      "leads_por_grupo": 4336,
+      "meses_de_leads": 10.2
+    },
+    "lead_para_ganho +3pp": {
+      "leads_por_grupo": 1991,
+      "meses_de_leads": 4.7
+    },
+    "lead_para_qualificado +5pp": {
+      "leads_por_grupo": 1520,
+      "meses_de_leads": 3.6
+    },
+    "dentro_sla +10pp": {
+      "leads_por_grupo": 334,
+      "meses_de_leads": 0.8
+    }
+  }
+}
