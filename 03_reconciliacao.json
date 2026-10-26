@@ -1,0 +1,220 @@
+{
+  "reproducao_do_painel": {
+    "leads_qualificados": {
+      "painel": 565,
+      "painel_mensal": [
+        191,
+        194,
+        180
+      ],
+      "regra_do_rotulo_qualified_flag_e_created_at": {
+        "mensal": [
+          198,
+          201,
+          192
+        ],
+        "total": 591
+      },
+      "regra_que_reproduz_etapa_qualificacao_e_mes_de_entrada": {
+        "mensal": [
+          191,
+          194,
+          180
+        ],
+        "total": 565
+      },
+      "equivalente_qualified_flag_sem_copias_duplicadas": {
+        "mensal": [
+          191,
+          194,
+          180
+        ],
+        "total": 565
+      }
+    },
+    "negocios_ganhos": {
+      "painel": 168,
+      "painel_mensal": [
+        56,
+        61,
+        51
+      ],
+      "regra_updated_at_no_periodo": {
+        "total": 168,
+        "mensal": [
+          58,
+          60,
+          50
+        ]
+      },
+      "regra_data_do_ganho_no_periodo": {
+        "total": 168,
+        "mensal": [
+          57,
+          60,
+          51
+        ]
+      },
+      "ganhos_q3_de_deals_que_entraram_antes_do_q3": 60
+    },
+    "taxa_conversao": {
+      "painel": 0.297345132743363,
+      "reproduzida": 0.2973451327433628
+    },
+    "ticket_medio": {
+      "painel": 28906.55,
+      "media_dos_168": 28906.55,
+      "mediana_dos_168": 13650.0,
+      "media_sem_outlier": 15367.07,
+      "outliers": [
+        2290000
+      ]
+    },
+    "total_deals_criados": {
+      "painel": 1521,
+      "reproduzido_created_at_valido_ou_entrada_se_invalido": 1521,
+      "copias_duplicadas_incluidas": 85,
+      "deals_perdidos_pelo_ano_2024_digitado": 7
+    },
+    "tempo_medio_resposta": {
+      "painel": 50.8,
+      "reproduzido": false,
+      "media_minutos_corridos_mesmos_deals": 118.6,
+      "mediana_minutos_corridos_mesmos_deals": 28.0,
+      "deals_do_periodo_sem_contato_fora_da_media": 359
+    }
+  },
+  "ponte": [
+    {
+      "passo": "1. Painel: ganhos fechados no Q3 ÷ qualificados que entraram no Q3",
+      "taxa": 0.2973,
+      "leitura": "Numerador e denominador são grupos diferentes"
+    },
+    {
+      "passo": "2. Mesmo denominador, numerador só com ganhos desses mesmos qualificados",
+      "taxa": 0.1912,
+      "leitura": "Coorte coerente, mas o Q3 ainda não teve tempo de fechar (agosto e setembro em aberto)"
+    },
+    {
+      "passo": "3. Qualificados que já tiveram 60 dias (coortes Jan-Jul)",
+      "taxa": 0.3014,
+      "leitura": "Conversão de qualificados: é o que a fórmula do painel aproxima quando o fluxo é estável"
+    },
+    {
+      "passo": "4. Denominador = todos os leads únicos (coortes Jan-Jul)",
+      "taxa": 0.1165,
+      "leitura": "Conversão de leads: a definição oficial"
+    },
+    {
+      "qualificados_q3": 565,
+      "desses_ja_ganhos": 108,
+      "desses_ainda_abertos": 325
+    }
+  ],
+  "serie_oficial_por_coorte": [
+    {
+      "mes": "2026-01",
+      "madura": true,
+      "leads": 418,
+      "qualificados": 157,
+      "ganhos_ate_60d": 49,
+      "conversao_leads_oficial": 0.1172,
+      "conversao_qualificados": 0.3121,
+      "formula_do_painel_no_mes": 0.0191
+    },
+    {
+      "mes": "2026-02",
+      "madura": true,
+      "leads": 404,
+      "qualificados": 165,
+      "ganhos_ate_60d": 41,
+      "conversao_leads_oficial": 0.1015,
+      "conversao_qualificados": 0.2485,
+      "formula_do_painel_no_mes": 0.1818
+    },
+    {
+      "mes": "2026-03",
+      "madura": true,
+      "leads": 449,
+      "qualificados": 175,
+      "ganhos_ate_60d": 51,
+      "conversao_leads_oficial": 0.1136,
+      "conversao_qualificados": 0.2914,
+      "formula_do_painel_no_mes": 0.3143
+    },
+    {
+      "mes": "2026-04",
+      "madura": true,
+      "leads": 474,
+      "qualificados": 176,
+      "ganhos_ate_60d": 48,
+      "conversao_leads_oficial": 0.1013,
+      "conversao_qualificados": 0.2727,
+      "formula_do_painel_no_mes": 0.3011
+    },
+    {
+      "mes": "2026-05",
+      "madura": true,
+      "leads": 457,
+      "qualificados": 181,
+      "ganhos_ate_60d": 53,
+      "conversao_leads_oficial": 0.116,
+      "conversao_qualificados": 0.2928,
+      "formula_do_painel_no_mes": 0.2044
+    },
+    {
+      "mes": "2026-06",
+      "madura": true,
+      "leads": 455,
+      "qualificados": 176,
+      "ganhos_ate_60d": 62,
+      "conversao_leads_oficial": 0.1363,
+      "conversao_qualificados": 0.3523,
+      "formula_do_painel_no_mes": 0.375
+    },
+    {
+      "mes": "2026-07",
+      "madura": true,
+      "leads": 501,
+      "qualificados": 191,
+      "ganhos_ate_60d": 64,
+      "conversao_leads_oficial": 0.1277,
+      "conversao_qualificados": 0.3351,
+      "formula_do_painel_no_mes": 0.2984
+    },
+    {
+      "mes": "2026-08",
+      "madura": false,
+      "leads": 475,
+      "qualificados": 194,
+      "ganhos_ate_60d": 42,
+      "conversao_leads_oficial": 0.0884,
+      "conversao_qualificados": 0.2165,
+      "formula_do_painel_no_mes": 0.3093
+    },
+    {
+      "mes": "2026-09",
+      "madura": false,
+      "leads": 467,
+      "qualificados": 180,
+      "ganhos_ate_60d": 2,
+      "conversao_leads_oficial": 0.0043,
+      "conversao_qualificados": 0.0111,
+      "formula_do_painel_no_mes": 0.2833
+    }
+  ],
+  "efeito_da_formula_do_painel_ilustrativo": {
+    "defasagem_entrada_ganho_em_meses": {
+      "0": 0.1432,
+      "1": 0.6359,
+      "2": 0.2209
+    },
+    "conversao_real_de_qualificados": 0.3014,
+    "aumento_de_qualificados": 0.3,
+    "painel_mostraria": {
+      "M+0": 0.2418,
+      "M+1": 0.286,
+      "M+2": 0.3014
+    }
+  }
+}
