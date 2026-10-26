@@ -10,9 +10,9 @@ Agente de primeiro contato e qualificação de leads. Arquivos nomeados pelo nú
 | 4 | Critérios de aceite e eventos | `04_criterios_aceite_eventos.md`, `04_linhas_de_base_criterios.py`, `04_linhas_de_base.json` | feito |
 | 5 | Arquitetura do agente | `05_arquitetura_agente.md` | feito |
 | 6 | Histórico de conversas com o Claude | links compartilhados | a fazer |
-| 7 | AS-IS e TO-BE (opcional) | `07_as_is_to_be.md`, `07_tempos_por_etapa.py` | em revisão, fora do zip |
-| 8 | Três riscos (opcional) | `08_riscos.md` | em revisão, fora do zip |
-| 9 | Protótipo de 16 horas (opcional) | `09_prototipo_16h.md` | em revisão, fora do zip |
+| 7 | AS-IS e TO-BE (opcional) | `07_as_is_to_be.md`, `07_tempos_por_etapa.py` | feito |
+| 8 | Três riscos (opcional) | `08_riscos.md` | feito |
+| 9 | Protótipo de 16 horas (opcional) | `09_prototipo_16h.md` | fora da entrega |
 
 Os materiais originais e a versão da tabela com contatos não são versionados (ver `01_nota_decisoes.md`, seção 6).
 
@@ -23,4 +23,5 @@ python 01_etl.py --input <pasta_dos_materiais> --output . --output-local saida_l
 python 02_calculos_baseline.py --tabela 01_tabela_analitica.csv --saida 02_metricas_baseline.json
 python 03_reconciliacao.py --input <pasta_dos_materiais> --tabela 01_tabela_analitica.csv --saida 03_reconciliacao.json
 python 04_linhas_de_base_criterios.py --tabela 01_tabela_analitica.csv --saida 04_linhas_de_base.json
+python 07_tempos_por_etapa.py --tabela 01_tabela_analitica.csv --saida 07_tempos_por_etapa.json
 ```
