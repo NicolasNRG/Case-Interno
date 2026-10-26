@@ -1,0 +1,60 @@
+{
+  "tempo_decorrido_dias": {
+    "entrada_ate_contato": {
+      "n": 3199,
+      "mediana": 0.0,
+      "p75": 0.0,
+      "p90": 0.1
+    },
+    "contato_ate_qualificacao": {
+      "n": 1595,
+      "mediana": 2.9,
+      "p75": 3.9,
+      "p90": 4.9
+    },
+    "qualificacao_ate_proposta": {
+      "n": 913,
+      "mediana": 8.0,
+      "p75": 12.0,
+      "p90": 14.0
+    },
+    "proposta_ate_ganho": {
+      "n": 412,
+      "mediana": 21.0,
+      "p75": 31.0,
+      "p90": 37.0
+    },
+    "entrada_ate_ganho": {
+      "n": 412,
+      "mediana": 32.6,
+      "p75": 42.0,
+      "p90": 49.0
+    }
+  },
+  "entrada_ate_contato_min_uteis_q3": {
+    "mediana": 27.0,
+    "p90": 134.9
+  },
+  "passagem_entre_etapas_jan_jul": {
+    "entrada_para_contato": 0.7764,
+    "contato_para_qualificacao": 0.498,
+    "qualificacao_para_proposta": 0.5659,
+    "proposta_para_ganho": 0.5326
+  },
+  "volume_mensal_q3": {
+    "leads_unicos_crm": 481.0,
+    "leads_so_na_planilha": 10.7,
+    "contatados": 376.7,
+    "qualificados": 188.3,
+    "propostas": 111.3,
+    "linhas_na_planilha": 383.0
+  },
+  "registro_duplo": {
+    "linhas_planilha_ligadas_ao_crm": 1117,
+    "mesma_data_que_o_crm": 0.983
+  },
+  "mensagens_por_lead_contatado": {
+    "da_vertice": 1.8,
+    "do_lead": 2.13
+  }
+}
